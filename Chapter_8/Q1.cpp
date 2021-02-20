@@ -15,7 +15,7 @@ struct Monster {
     int health{};
 };
 
-std::string getMonsterType(Monster &m) {
+std::string getMonsterType(const Monster &m) {
     switch(m.type) {
         case Monster_t::Ogre: return "Ogre";
         case Monster_t::Dragon: return "Dragon";
@@ -26,7 +26,7 @@ std::string getMonsterType(Monster &m) {
     }
 }
 
-void printMonster(Monster &m) {
+void printMonster(const Monster &m) {
     std::string mType{getMonsterType(m)};
 
     std::cout << "This " << mType << " is named " << m.name << " and has " << m.health << " health." << std::endl;
